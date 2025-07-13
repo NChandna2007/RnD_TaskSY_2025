@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO BITCHES</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            position: relative;
+            overflow-x: hidden;
+        }   
+
+        .gradient-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                /*top -left h */
+                radial-gradient(ellipse 80% 90% at 25% 20%, 
+                    rgba(220, 20, 60, 1) 0%, 
+                    rgba(180, 0, 0, 0.9) 15%, 
+                    rgba(120, 0, 0, 0.7) 35%, 
+                    rgba(60, 0, 0, 0.4) 55%, 
+                    rgba(0, 0, 0, 0.8) 70%, 
+                    rgba(0, 0, 0, 1) 85%),
+                
+                /* right wala */
+                radial-gradient(ellipse 70% 100% at 85% 40%, 
+                    rgba(200, 30, 50, 0.8) 0%, 
+                    rgba(150, 0, 0, 0.6) 20%, 
+                    rgba(100, 0, 0, 0.4) 40%, 
+                    rgba(50, 0, 0, 0.2) 60%, 
+                    rgba(0, 0, 0, 0.9) 75%, 
+                    rgba(0, 0, 0, 1) 90%),
+                
+                /* neeche wala */
+                radial-gradient(ellipse 90% 60% at 60% 90%, 
+                    rgba(160, 20, 40, 0.7) 0%, 
+                    rgba(120, 0, 0, 0.5) 25%, 
+                    rgba(80, 0, 0, 0.3) 50%, 
+                    rgba(0, 0, 0, 0.8) 70%, 
+                    rgba(0, 0, 0, 1) 85%),
+                
+                /* beech wala */
+                radial-gradient(ellipse 60% 80% at 50% 50%, 
+                    rgba(180, 30, 60, 0.6) 0%, 
+                    rgba(140, 0, 20, 0.4) 30%, 
+                    rgba(100, 0, 0, 0.2) 50%, 
+                    rgba(0, 0, 0, 0.7) 70%, 
+                    rgba(0, 0, 0, 1) 90%),
+                
+                /* backhground */
+                #000000;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                
+                radial-gradient(circle at 20% 30%, 
+                    rgba(255, 0, 50, 0.9) 0%, 
+                    rgba(200, 0, 30, 0.6) 20%, 
+                    rgba(0, 0, 0, 0.3) 40%, 
+                    rgba(0, 0, 0, 0.8) 70%),
+                
+                radial-gradient(circle at 75% 60%, 
+                    rgba(220, 40, 70, 0.7) 0%, 
+                    rgba(160, 0, 20, 0.4) 25%, 
+                    rgba(0, 0, 0, 0.5) 50%, 
+                    rgba(0, 0, 0, 0.9) 80%);
+            
+            filter: blur(60px);
+            animation: organicPulse 8s ease-in-out infinite;
+        }
+
+        .gradient-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+               
+                radial-gradient(circle at 30% 25%, 
+                    rgba(255, 20, 80, 0.8) 0%, 
+                    rgba(180, 0, 40, 0.4) 15%, 
+                    rgba(0, 0, 0, 0.2) 30%, 
+                    rgba(0, 0, 0, 0.7) 60%),
+                
+                radial-gradient(circle at 70% 70%, 
+                    rgba(200, 50, 90, 0.6) 0%, 
+                    rgba(140, 20, 50, 0.3) 20%, 
+                    rgba(0, 0, 0, 0.4) 40%, 
+                    rgba(0, 0, 0, 0.8) 70%),
+                
+                radial-gradient(circle at 50% 80%, 
+                    rgba(180, 30, 60, 0.5) 0%, 
+                    rgba(120, 10, 30, 0.2) 25%, 
+                    rgba(0, 0, 0, 0.6) 50%, 
+                    rgba(0, 0, 0, 0.9) 80%);
+            
+            filter: blur(40px);
+            animation: organicFlow 15s linear infinite;
+        }
+
+       
+        @keyframes organicPulse {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.9;
+            }
+            50% { 
+                transform: scale(1.1) rotate(180deg);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes organicFlow {
+            0% { 
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+            25% { 
+                transform: translate(-30px, -20px) rotate(90deg) scale(1.05);
+            }
+            50% { 
+                transform: translate(20px, -30px) rotate(180deg) scale(0.95);
+            }
+            75% { 
+                transform: translate(30px, 20px) rotate(270deg) scale(1.1);
+            }
+            100% { 
+                transform: translate(0, 0) rotate(360deg) scale(1);
+            }
+        }
+
+        
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        .portfolio-section {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .portfolio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-title {
+            font-size: 5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .portfolio-subtitle {
+            font-size: 2.5rem;
+            font-weight: 100;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .portfolio-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-nav-item {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .portfolio-nav-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 2px;
+            background: rgba(220, 20, 60, 0.8);
+            transition: width 0.3s ease;
+        }
+
+        .portfolio-nav-item:hover {
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .portfolio-nav-item:hover:before {
+            width: 15px;
+        }
+
+        .portfolio-nav-item.active {
+            color: white;
+        }
+
+        .portfolio-nav-item.active:before {
+            width: 15px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .portfolio-showcase {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            aspect-ratio: 16/10;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-showcase:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(220, 20, 60, 0.3);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-showcase:hover .portfolio-image {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-showcase:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-work-title {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-work-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+
+        .portfolio-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            max-width: 500px;
+        }
+
+        .portfolio-accent {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(220, 20, 60, 1), rgba(255, 100, 150, 0.8));
+            margin: 2rem 0;
+            border-radius: 2px;
+        }
+
+        .brand-logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: white;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand-logo:before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, rgba(220, 20, 60, 1), rgba(255, 100, 150, 0.8));
+            border-radius: 6px;
+        }
+
+        .slideshow-section {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slideshow-container {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+        }
+
+        .slideshow-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .slideshow-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        .slideshow-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+
+        .slideshow-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide:nth-child(1) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .slide:nth-child(2) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .slide:nth-child(3) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .slide:nth-child(4) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .slide:nth-child(5) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 3rem;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .slide.active .slide-content {
+            transform: translateY(0);
+        }
+
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .slide-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .slideshow-controls {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .slide-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .slide-dot.active {
+            background: rgba(220, 20, 60, 0.8);
+            border-color: rgba(220, 20, 60, 0.5);
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.5);
+        }
+
+        .slide-dot:hover {
+            background: rgba(220, 20, 60, 0.6);
+            transform: scale(1.1);
+        }
+
+        .slideshow-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slideshow-nav:hover {
+            background: rgba(220, 20, 60, 0.3);
+            border-color: rgba(220, 20, 60, 0.5);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        .slideshow-nav.prev {
+            left: 2rem;
+        }
+
+        .slideshow-nav.next {
+            right: 2rem;
+        }
+
+        .slideshow-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: rgba(220, 20, 60, 0.8);
+            transition: width 0.1s ease;
+            border-radius: 2px;
+        }
+
+        .slideshow-counter {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .title {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+            line-height: 1.1;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 100;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            animation: subtitleFloat 4s ease-in-out infinite;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+        }
+
+        .nav-item:hover {
+            background: rgba(220, 20, 60, 0.3);
+            border-color: rgba(220, 20, 60, 0.5);
+            transform: translateX(-5px);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        .social-links {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 20;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: rgba(220, 20, 60, 0.4);
+            border-color: rgba(220, 20, 60, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes titleGlow {
+            0% { 
+                text-shadow: 0 0 30px rgba(220, 20, 60, 0.5), 0 0 60px rgba(220, 20, 60, 0.3);
+            }
+            100% { 
+                text-shadow: 0 0 50px rgba(220, 20, 60, 0.8), 0 0 100px rgba(220, 20, 60, 0.5);
+            }
+        }
+
+        @keyframes subtitleFloat {
+            0%, 100% { 
+                transform: translateY(0px);
+            }
+            50% { 
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="gradient-background"></div>
+    <div class="gradient-overlay"></div>
+    <div class="gradient-texture"></div>
+    
+    
+    
+    <div class="content">
+        <h1 class="title">NEHAL CHANDNA</h1>
+        <p class="subtitle">Creative Developer & Graphic Designer</p>
+    </div>
+
+    <section class="portfolio-section">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <div>
+                    <h2 class="portfolio-title">PORTFOLIO</h2>
+                    <p class="portfolio-subtitle">Selected Works</p>
+                </div>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-showcase">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <div style="width: 200px; height: 200px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #333;">🌙</div>
+                        <div style="position: absolute; bottom: 20%; left: 50%; transform: translateX(-50%); width: 60px; height: 120px; background: linear-gradient(to bottom, #ff6b6b, #ffa726); border-radius: 30px 30px 0 0;"></div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-work-title">Mogadisu Somalia</h3>
+                        <p class="portfolio-work-subtitle">Shooting and Advertisement Campaign</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="portfolio-description">
+                        A genre of Japanese art that became popular in the 17th century through to the 19th century. The word roughly translates as "pictures of the floating world" and artists belonging to the movement produced woodblock prints and paintings of scenes from history and folktales, sumo wrestlers, landscapes of flora and fauna, and a touch of erotica.
+                    </p>
+                    <div class="portfolio-accent"></div>
+                </div>
+            </div>
+
+            <div class="portfolio-grid" style="margin-top: 4rem;">
+                <div>
+                    <p class="portfolio-description">
+                        Contemporary digital art meets traditional aesthetics in this stunning collection. Each piece tells a story through vibrant colors, dynamic compositions, and innovative techniques that push the boundaries of modern visual storytelling.
+                    </p>
+                    <div class="portfolio-accent"></div>
+                </div>
+
+                <div class="portfolio-showcase">
+                    <div style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); height: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <div style="width: 150px; height: 150px; background: rgba(255,255,255,0.1); border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #e74c3c, #f39c12); border-radius: 50%;"></div>
+                        </div>
+                        <div style="position: absolute; top: 20%; right: 20%; width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
+                        <div style="position: absolute; bottom: 30%; left: 15%; width: 60px; height: 60px; background: rgba(255,255,255,0.15); border-radius: 50%;"></div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-work-title">Digital Abstracts</h3>
+                        <p class="portfolio-work-subtitle">Contemporary Art Series</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slideshow-section">
+        <div class="slideshow-container">
+            <div class="slideshow-header">
+                <h2 class="slideshow-title">GALLERY</h2>
+                <p class="slideshow-subtitle">Featured Photography & Design Work</p>
+            </div>
+
+            <div class="slideshow-wrapper">
+                <div class="slide active">
+                    
+                    <div class="slide-content">
+                        <h3 class="slide-title">Golden Hour</h3>
+                        <p class="slide-description">Capturing the magic of golden hour light in urban landscapes, where shadows dance and colors come alive.</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    
+                    <div class="slide-content">
+                        <h3 class="slide-title">Ocean Dreams</h3>
+                        <p class="slide-description">Abstract compositions inspired by the rhythmic patterns of ocean waves and coastal serenity.</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    
+                    <div class="slide-content">
+                        <h3 class="slide-title">Midnight Stories</h3>
+                        <p class="slide-description">Nocturnal photography exploring the mysterious beauty of city lights and moonlit landscapes.</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    
+                    <div class="slide-content">
+                        <h3 class="slide-title">Natural Patterns</h3>
+                        <p class="slide-description">Macro photography revealing the intricate geometries and textures hidden in nature's designs.</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    
+                    <div class="slide-content">
+                        <h3 class="slide-title">Digital Art</h3>
+                        <p class="slide-description">Contemporary digital compositions blending traditional artistic techniques with modern technology.</p>
+                    </div>
+                </div>
+
+                <div class="slideshow-nav prev">‹</div>
+                <div class="slideshow-nav next">›</div>
+                
+                <div class="slideshow-counter">
+                    <span id="current-slide">1</span> / <span id="total-slides">5</span>
+                </div>
+                
+                <div class="slideshow-progress" id="progress-bar"></div>
+            </div>
+
+            <div class="slideshow-controls">
+                <div class="slide-dot active" data-slide="0"></div>
+                <div class="slide-dot" data-slide="1"></div>
+                <div class="slide-dot" data-slide="2"></div>
+                <div class="slide-dot" data-slide="3"></div>
+                <div class="slide-dot" data-slide="4"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slide-dot');
+        const totalSlides = slides.length;
+        const progressBar = document.getElementById('progress-bar');
+        const currentSlideElement = document.getElementById('current-slide');
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            
+            currentSlideElement.textContent = index + 1;
+            
+            
+            const progress = ((index + 1) / totalSlides) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000); 
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        
+        document.querySelector('.slideshow-nav.next').addEventListener('click', () => {
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+
+        document.querySelector('.slideshow-nav.prev').addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+                stopAutoSlide();
+                startAutoSlide();
+            });
+        });
+
+       
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            }
+        });
+
+        
+        const slideshowWrapper = document.querySelector('.slideshow-wrapper');
+        slideshowWrapper.addEventListener('mouseenter', stopAutoSlide);
+        slideshowWrapper.addEventListener('mouseleave', startAutoSlide);
+
+        showSlide(0);
+        startAutoSlide();
+    </script>
+
+   
+
+
+    <div class="scroll-indicator">
+        ↓ Scroll to explore
+    </div>
+</body>
+</html>
